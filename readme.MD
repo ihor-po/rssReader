@@ -1,6 +1,6 @@
 # Simple example of rss reader 
 
-##Task
+## Task
 Write a __method__, that can get rss feed, parse it, and return array with parsed data.
 
 ### Rss feed
@@ -8,7 +8,7 @@ Write a __method__, that can get rss feed, parse it, and return array with parse
 https://www.nu.nl/rss/Sport
 ```
 
-###Project structure
+### Project structure
 > * app
 >  * Components
 >    * FileService
@@ -17,7 +17,7 @@ https://www.nu.nl/rss/Sport
 >  * Task
 > * images
 
-###Requirements to logic:
+### Requirements to logic:
 * All item -> enclosure url images must be downloaded into our images folder.
 * We need to rename image file into a unique hash (md5, sha1, etc... you decide which approach to use here).
   * if image is already in our images folder, it is used, and we do NOT download duplicate
@@ -32,10 +32,16 @@ https://www.nu.nl/rss/Sport
 ]}
 ```
 
-###Before start
+### Before start
 
 Run the command below
 
 ```bash
 composer dump-autoload
+```
+
+### Run script
+
+```bash
+php index.php
 ```
