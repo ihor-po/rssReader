@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "App\\Components\\": "components/",
+            "App\\Controller\\": "task/"
+        }
+    },
+  "require": {
+    "ext-simplexml": "*",
+    "ext-json": "*"
+  }
+}
