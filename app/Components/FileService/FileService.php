@@ -7,7 +7,7 @@ namespace App\Components\FileService;
  * Class ImageService
  * @package App\Components\FileService
  */
-class FileService
+class FileService implements FileServiceInterface
 {
     /** @var string  */
     private const IMAGE_FOLDER = 'images';
@@ -22,10 +22,7 @@ class FileService
         }
     }
 
-    /**
-     * @param string $url
-     * @return string
-     */
+    /** @inheritDoc */
     public function saveImage(string $url): string
     {
         $fileTmp = $this->createTemporaryFileFromUrl($url);

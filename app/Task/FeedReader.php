@@ -8,7 +8,11 @@ use App\Components\XmlService\XmlService;
 use Exception;
 use SimpleXMLElement;
 
-class FeedReader
+/**
+ * Class FeedReader
+ * @package App\Task
+ */
+class FeedReader implements FeedReaderInterface
 {
     /** @var string $uri */
     private $uri;
@@ -30,10 +34,7 @@ class FeedReader
         $this->imageService = new FileService();
     }
 
-    /**
-     * @param string $value
-     * @throws Exception
-     */
+    /** @inheritDoc */
     public function setURI(string $value)
     {
         if (!$this->checkURI($value)) {
@@ -43,10 +44,7 @@ class FeedReader
         $this->uri = $value;
     }
 
-    /**
-     * @return mixed
-     * @throws Exception
-     */
+    /** @inheritDoc */
     public function load()
     {
         $rssData = $this->rssReader->read($this->uri);
@@ -59,11 +57,7 @@ class FeedReader
         return $items;
     }
 
-    /**
-     * @param SimpleXMLElement $items
-     * @return false|string
-     * @throws Exception
-     */
+    /** @inheritDoc */
     public function getResult(SimpleXMLElement $items)
     {
         $response = [];

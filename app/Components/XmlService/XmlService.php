@@ -12,16 +12,9 @@ use SimpleXMLElement;
  *
  * @package App\Components\XmlService
  */
-class XmlService
+class XmlService implements XmlServiceInterface
 {
-    /**
-     * Get key values
-     *
-     * @param SimpleXMLElement $children
-     * @param string $key
-     * @return mixed
-     * @throws Exception
-     */
+    /** @inheritDoc */
     public function searchChildrenValueByKey(SimpleXMLElement $children, string $key)
     {
         while ($children->count()) {
@@ -35,12 +28,7 @@ class XmlService
         return null;
     }
 
-    /**
-     * @param SimpleXMLElement $children
-     * @param array $keys
-     * @return array
-     * @throws Exception
-     */
+    /** @inheritDoc */
     public function searchChildrenValueByKeys(SimpleXMLElement $children, array $keys): array
     {
         $values = [];
@@ -53,11 +41,7 @@ class XmlService
         return $values;
     }
 
-    /**
-     * @param SimpleXMLElement $attribute
-     * @param string $key
-     * @return SimpleXMLElement|null
-     */
+    /** @inheritDoc */
     public function searchAttributeValueByKey(SimpleXMLElement $attribute, string $key): ?SimpleXMLElement
     {
         if (!$this->isKeyValueAttribute($attribute)) {

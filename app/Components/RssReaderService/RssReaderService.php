@@ -8,15 +8,9 @@ use SimpleXMLElement;
 /**
  * RssReaderService class
  */
-class RssReaderService
+class RssReaderService implements RssReaderServiceInterface
 {
-    /**
-     * Read data
-     *
-     * @param string $rssURI
-     * @return SimpleXMLElement|string
-     * @throws Exception
-     */
+    /** @inheritDoc */
     public function read(string $rssURI)
     {
         try
